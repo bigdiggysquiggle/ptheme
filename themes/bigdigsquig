@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#the user and home directories are on a green to red gradient indicating cpu temp and ram use respectively
+#the @ symbol is blue normally, changes to purple in a repo. also makes use of the git branch script
+#the prompt arrow changes colour hourly based on the time of day
+
 PATH="$PATH:$PROMPT_BASE_DIR/bin"
 export GIT_PROMPT=1
 
