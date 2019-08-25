@@ -3,4 +3,4 @@
 PATH="$PATH:$PROMPT_BASE_DIR/bin"
 export GIT_PROMPT=1
 
-echo "\[$(temp.sh)\]\u\[\e[0m\] \[$(isgit.sh)\]@\[\e[0m\] $(ram.sh)\w/\[\e[0m\]$(git_prompt.sh)$ERROR\n \[$(time.sh)\]8==>~\[\e[0m\] "
+echo "\[$(temp.sh)\]\u\[\e[0m\] \[$(isgit.sh)\]@\[\e[0m\] $(ram.sh)\w/\[\e[0m\]$(git_prompt.sh)$ERROR\n \[$(time.sh)\]==>\[\e[0m\] "
