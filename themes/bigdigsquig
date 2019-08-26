@@ -5,11 +5,16 @@
 #the prompt arrow changes colour hourly based on the time of day
 
 PATH="$PATH:$PROMPT_BASE_DIR/bin"
+
 export GIT_PROMPT=1
-GIT_BRANCH=$(git_prompt.sh)
-if [ -n $GIT_BRANCH ]; then
+
+GIT_BRANCH="$(git_prompt.sh)"
+
+
+if [ -n "$GIT_BRANCH" ]; then
 	AT="\e[38;5;57m"
 else
 	AT="\e[38;5;81m"
+fi
 
-echo "\[$(cpu_temp_colourizer.sh)\]\u\[\e[0m\] \[$AT\]@\[\e[0m\] $(ram_usage_colourizer.sh)\w/\[\e[0m\]$GIT_BRANCH\n \[$(time_of_day_colourizer.sh)\]==>\[\e[0m\] "
+echo "\[$(cpu_temp_colourizer.sh)\]\u\[\e[0m\] \[$AT\]@\[\e[0m\] \[$(ram_usage_colourizer.sh)\]\w/\[\e[0m\]$GIT_BRANCH\n \[$(time_of_day_colourizer.sh)\]==>\[\e[0m\] "
