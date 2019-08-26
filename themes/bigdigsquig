@@ -15,7 +15,7 @@ if [ -n "$GIT_BRANCH" ]; then
 	AT="\e[38;5;57m"
 else
 	AT="\e[38;5;81m"
-	GIT_BRANCH="${GIT_BRANCH//\[0;32m/[1;32m}"
+	GIT_BRANCH="${GIT_BRANCH//[0;32m/[1;32m}"
 fi
 
 echo "\[$(cpu_temp_colourizer.sh)\]\u\[\e[0m\] \[$AT\]@\[\e[0m\] \[$(ram_usage_colourizer.sh)\]\w/\[\e[0m\]$GIT_BRANCH\n \[$(time_of_day_colourizer.sh)\]==>\[\e[0m\] "
