@@ -7,17 +7,14 @@
 PATH="$PATH:$PROMPT_BASE_DIR/bin"
 
 export GIT_PROMPT=1
-#in the event the branch is coloured green, make it bold green
-GIT_BRANCH=$(git_prompt.sh) #`sed "s/[0;32m/[1;32m" "$(git_prompt.sh)"`
+
+GIT_BRANCH=$(git_prompt.sh)
 
 
 if [ -n "$GIT_BRANCH" ]; then
 	AT="\e[38;5;57m"
 else
-	OLD_GREEN="\e[0;32m"
-	NEW_GREEN="\e[1;32m"
 	AT="\e[38;5;81m"
-	GIT_BRANCH="${GIT_BRANCH//$OLD_GREEN/$NEW_GREEN}"
 fi
 
 echo "\[$(cpu_temp_colourizer.sh)\]\u\[\e[0m\] \[$AT\]@\[\e[0m\] \[$(ram_usage_colourizer.sh)\]\w/\[\e[0m\]$GIT_BRANCH\n \[$(time_of_day_colourizer.sh)\]==>\[\e[0m\] "
