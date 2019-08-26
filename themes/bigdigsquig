@@ -8,7 +8,7 @@ PATH="$PATH:$PROMPT_BASE_DIR/bin"
 
 export GIT_PROMPT=1
 
-GIT_BRANCH="$(git_prompt.sh)"
+GIT_BRANCH=sed -i "s/\e[0;32m/\e[1;32m/g" "$(git_prompt.sh)"
 
 
 if [ -n "$GIT_BRANCH" ]; then
