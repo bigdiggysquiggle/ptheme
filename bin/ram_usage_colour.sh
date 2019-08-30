@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 COLOUR=(46 82 118 154 190 226 220 214 208 202 196)
 TOTAL="$(awk '/MemTotal/{ printf $2 }' /proc/meminfo)"
 USED="$(($TOTAL - $(awk '/MemAvailable/{ printf $2 }' /proc/meminfo)))"
