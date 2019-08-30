@@ -12,7 +12,7 @@ GIT_BRANCH="$(git_prompt.sh)"
 SSH="$(env | grep SSH)"
 
 
-if [ -n "$SSH" ]; then
+if [ -n "$SSH_CONNECTION" ]; then
 	AT="\e[38;5;57m"
 else
 	AT="\e[38;5;81m"
