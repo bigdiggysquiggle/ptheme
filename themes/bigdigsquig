@@ -8,8 +8,8 @@ PATH="$PATH:$PROMPT_BASE_DIR/bin"
 
 export GIT_PROMPT=1
 
-GIT_BRANCH=$(git_prompt.sh)
-SSH=$(`env | grep SSH`)
+GIT_BRANCH="$(git_prompt.sh)"
+SSH="$(env | grep SSH)"
 
 
 if [ -n "$SSH" ]; then
