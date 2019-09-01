@@ -9,7 +9,6 @@ PATH="$PATH:$PROMPT_BASE_DIR/bin"
 export GIT_PROMPT=1
 
 GIT_BRANCH="$(git_prompt.sh)"
-SSH="$(env | grep SSH_CONNECTION)"
 
 if [ -n "$SSH_CONNECTION" ]; then
 	AT="\e[38;5;57m"
