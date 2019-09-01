@@ -18,4 +18,4 @@ fi
 
 W=$(echo $PWD | sed -e "s/\/home\/dromansk/~/" -e "s/.*\///")
 
-echo "\[$(cpu_temp_colour.sh)\]\u \[$AT\]@ \[$(ram_usage_colour.sh)\]\h $(curr_dir_perm_colour.sh)$W/$GIT_BRANCH\n \[$(time_of_day_colour.sh)\]8==>~\[\e[0m\] "
+echo "\[$(cpu_temp_colour.sh)\]\u \[$AT\]@ \[$(ram_usage_colour.sh)\]\h $(curr_dir_perm_colour.sh)$W/$GIT_BRANCH\n \[$(time_of_day_colour.sh)\]==>\[\e[0m\] "
