@@ -16,4 +16,6 @@ else
 	AT="\e[38;5;81m"
 fi
 
-echo "\[$(cpu_temp_colour.sh)\]\u \[$AT\]@ \[$(ram_usage_colour.sh)\]\h $(curr_dir_perm_colour.sh)\w/$GIT_BRANCH\n \[$(time_of_day_colour.sh)\]==>\[\e[0m\] "
+W=$(echo $PWD | sed "s/.*\///")
+
+echo "\[$(cpu_temp_colour.sh)\]\u \[$AT\]@ \[$(ram_usage_colour.sh)\]\h $(curr_dir_perm_colour.sh)$W/$GIT_BRANCH\n \[$(time_of_day_colour.sh)\]==>\[\e[0m\] "
