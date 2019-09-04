@@ -13,4 +13,4 @@ prompt_command ()
     PS1="$("$PROMPT_THEME_DIR"/"$PROMPT_THEME" "$?")"
 }
 
-PROMPT_COMMAND=prompt_command
+precmd_functions=(prompt_command)
