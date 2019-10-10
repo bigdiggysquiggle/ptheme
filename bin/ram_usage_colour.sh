@@ -6,7 +6,11 @@ f2i() {
    printf "%.0f ", ARGV[i]}' "$@"
 }
 
-if [ $OSTYPE == "linux-gnu" ]; then
+if [ $OSTYPE == "linux-android" ]; then
+	STATUS=$(tsudo cat /proc/meminfo)
+	TOTAL=$(echo $STATUS | awk '/MemTotal/{ print $2 }')
+	USED=$(($TOTAL - (`echo $STATUS | awk '/MemAvailable/{ print $2 }'` + `echo $STATUS | awk '/MemFree/{ print $2 }'`)))
+elif [ $OSTYPE == "linux-gnu" ]; then
 	TOTAL="$(awk '/MemTotal/{ printf $2 }' /proc/meminfo)"
 	USED="$(($TOTAL - $(awk '/MemAvailable/{ printf $2 }' /proc/meminfo)))"
 else
