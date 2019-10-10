@@ -1,5 +1,5 @@
 # Default prompt theme
-export PROMPT_THEME="bigdigsquig"
+export PROMPT_THEME="bigdigsquig_zsh"
 
 # Path of base directory (used in theme scripts to find bin folder)
 export PROMPT_BASE_DIR="$HOME/bin/ptheme"

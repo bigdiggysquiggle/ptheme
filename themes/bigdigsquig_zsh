@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#the user and home directories are on a green to red gradient indicating cpu temp and ram use respectively
+#the @ symbol is blue normally, changes to purple in a repo. also makes use of the git branch script
+#the prompt arrow changes colour hourly based on the time of day
+
+PATH="$PATH:$PROMPT_BASE_DIR/bin"
+
+export GIT_PROMPT=1
+
+GIT_BRANCH="$(git_prompt.sh)"
+
+if [ -n "$SSH_CONNECTION" ]; then
+	AT="\033[38;5;57m"
+else
+	AT="\033[38;5;81m"
+fi
+
+W=$(echo $PWD | sed -e "s/\/home\/dromansk/~/" -e "s/.*\///")
+
+echo "%{$(cpu_temp_colour.sh)%}%n %{$AT%}@ %{$(ram_usage_colour.sh)%}%m $(curr_dir_perm_colour.sh)$W/$GIT_BRANCH\n %{$(time_of_day_colour.sh)%}==>%{\033[0m%} "
